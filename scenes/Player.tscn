@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdreydg3qa64o"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_boqv3"]
+[ext_resource type="Texture2D" uid="uid://bs41xkifn7yye" path="res://sprites/player_placeholder.png" id="2_t835x"]
+[ext_resource type="PackedScene" uid="uid://dlk5xnjkve6jv" path="res://scenes/Shooter.tscn" id="3_uajd3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0s3l"]
+radius = 28.4429
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_boqv3")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_t835x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(1.00351, 1)
+shape = SubResource("CircleShape2D_b0s3l")
+
+[node name="Shooter" parent="CharacterBody2D" instance=ExtResource("3_uajd3")]
+position = Vector2(1, -53)

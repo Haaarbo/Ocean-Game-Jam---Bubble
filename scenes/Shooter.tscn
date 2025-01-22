@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlk5xnjkve6jv"]
+
+[ext_resource type="Texture2D" uid="uid://c5adi80qa15i7" path="res://icon.svg" id="1_m685e"]
+[ext_resource type="Script" path="res://scripts/shooter.gd" id="1_tmuox"]
+
+[node name="Shooter" type="Node2D"]
+scale = Vector2(1, 0.16)
+script = ExtResource("1_tmuox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.240001, 0.249997)
+texture = ExtResource("1_m685e")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(17, 0)
