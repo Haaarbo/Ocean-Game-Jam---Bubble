@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6hwadvfrfyiq"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_drsxe"]
+[ext_resource type="Texture2D" uid="uid://bs41xkifn7yye" path="res://Sprites/player_placeholder.png" id="2_5nxc3"]
+[ext_resource type="Texture2D" uid="uid://bblifpy3ueomy" path="res://icon.svg" id="2_ijt3a"]
+[ext_resource type="PackedScene" uid="uid://dlk5xnjkve6jv" path="res://Shooter.tscn" id="3_cfam8"]
+[ext_resource type="Script" path="res://shooter.gd" id="4_y7jg2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xleub"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_drsxe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(578, 347)
+texture = ExtResource("2_5nxc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(574, 341)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_xleub")
+
+[node name="Shooter" parent="Player" instance=ExtResource("3_cfam8")]
+position = Vector2(573, 304)
+scale = Vector2(0.413055, 0.0394574)
+script = ExtResource("4_y7jg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Shooter"]
+texture = ExtResource("2_ijt3a")
