@@ -1339,5 +1339,3 @@ func match_rand_prop(original:String) -> String:
 		"scale_multi_iterations": return "r_scale_multi_iter"
 		"": return "r_"
 	return ""
-
-

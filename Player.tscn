@@ -20,4 +20,4 @@ scale = Vector2(1.00351, 1)
 shape = SubResource("CircleShape2D_b0s3l")
 
 [node name="Shooter" parent="CharacterBody2D" instance=ExtResource("3_s3jqd")]
-position = Vector2(0, -41)
+position = Vector2(1, -53)
