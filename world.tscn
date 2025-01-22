@@ -21,11 +21,11 @@ position = Vector2(380.5, -3)
 scale = Vector2(12, 1)
 shape = SubResource("RectangleShape2D_08ntm")
 
+[node name="Player" parent="game" instance=ExtResource("1_3cf08")]
+position = Vector2(590, 416)
+
 [node name="telaControl" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Player" parent="." instance=ExtResource("1_3cf08")]
-position = Vector2(618, 442)
