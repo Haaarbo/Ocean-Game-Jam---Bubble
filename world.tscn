@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwftpc180es5b"]
+[gd_scene load_steps=3 format=3 uid="uid://bwftpc180es5b"]
+
+[ext_resource type="PackedScene" uid="uid://cdreydg3qa64o" path="res://Player.tscn" id="1_3cf08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08ntm"]
 size = Vector2(63.4167, 20)
@@ -24,3 +26,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Player" parent="." instance=ExtResource("1_3cf08")]
+position = Vector2(618, 442)
