@@ -1,6 +1,6 @@
 extends Node2D
 
-var Bullet = preload("res://bullet.tscn")
+var Bullet = preload("res://scenes/bullet.tscn")
 @onready var marker: Marker2D = $Marker2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,14 +1,13 @@
 extends Area2D
 
 # Velocidade do projétil
-@export var speed = 100.0
+@export var speed = 200.0
 # Referência ao jogador para verificar o tipo de projétil
-@export var projectile_type: String
-
+@export var bubble_type: String
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# Move o projétil para baixo
+	# Move o projetil para baixo
 	position.y += speed * delta
 	# Remove o projétil ao sair da tela
 	if position.y > get_viewport_rect().size.y:
@@ -16,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	
 func _on_area_entered(area):
 	# Verifica se a colisão é com outro projétil do mesmo tipo
-	if area.is_in_group("projectiles") and area.projectile_type == self.projectile_type:
+	if area.is_in_group("spawner") and area.bubble_type == self.bubble_type:
 		#Destroi as bolhas
 		destroy_connected_bubbles()
 
@@ -30,6 +29,9 @@ func destroy_connected_bubbles():
 		
 #Funcao pra selecionar todas as bolhas que precisam ser destruidas
 func get_connected_bubbles():
-	var checked = []
-	var to_check = [self]  # Começa com este projétil
-	var connected = []
+	var checked = [] #Bolhas checadas
+	var to_check = [self]  # Bolhas a serem checadaas
+	var connected = [] #Bolhas conectadas
+	
+	while to_check .size() > 0: #Ou seja, se tem bolhas que precisam ser checadas
+		var currente = to_check.pop_front()
