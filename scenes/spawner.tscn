@@ -11,3 +11,4 @@ bubble_scene = ExtResource("2_qk51a")
 autostart = true
 
 [node name="bubble" parent="." instance=ExtResource("2_qk51a")]
+visible = false

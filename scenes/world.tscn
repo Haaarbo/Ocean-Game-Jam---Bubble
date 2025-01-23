@@ -1,13 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3n7uikg6fjlm"]
+[gd_scene load_steps=5 format=3 uid="uid://b3n7uikg6fjlm"]
 
 [ext_resource type="PackedScene" uid="uid://cdreydg3qa64o" path="res://scenes/Player.tscn" id="1_tcavs"]
 [ext_resource type="PackedScene" uid="uid://dh85scig3a4wx" path="res://scenes/spawner.tscn" id="2_phe7y"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eti3r"]
-size = Vector2(785, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm24n"]
-size = Vector2(35, 908)
+[ext_resource type="PackedScene" uid="uid://dxr00k6rv28e8" path="res://scenes/colisoes.tscn" id="3_wbbxy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cnog8"]
 
@@ -19,24 +14,10 @@ position = Vector2(28, 26)
 [node name="Player" parent="scrGame" instance=ExtResource("1_tcavs")]
 position = Vector2(316, 862)
 
-[node name="floor1" type="CollisionShape2D" parent="scrGame"]
-position = Vector2(393.5, 0)
-shape = SubResource("RectangleShape2D_eti3r")
-
-[node name="floor2" type="CollisionShape2D" parent="scrGame"]
-position = Vector2(393.5, 930)
-shape = SubResource("RectangleShape2D_eti3r")
-
-[node name="wall1" type="CollisionShape2D" parent="scrGame"]
-position = Vector2(18.5, 464)
-shape = SubResource("RectangleShape2D_sm24n")
-
-[node name="wall2" type="CollisionShape2D" parent="scrGame"]
-position = Vector2(770, 464)
-shape = SubResource("RectangleShape2D_sm24n")
-
 [node name="Spawner" parent="scrGame" instance=ExtResource("2_phe7y")]
 position = Vector2(52, 14)
+
+[node name="colisoes" parent="scrGame" instance=ExtResource("3_wbbxy")]
 
 [node name="scrControl" type="Control" parent="."]
 layout_mode = 3
@@ -61,3 +42,9 @@ text = "Score"
 label_settings = SubResource("LabelSettings_cnog8")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="nodeLimite" type="Node2D" parent="."]
+position = Vector2(64, 704)
+
+[node name="nodeLimite2" type="Node2D" parent="."]
+position = Vector2(72, 40)

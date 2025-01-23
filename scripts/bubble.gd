@@ -5,10 +5,17 @@ extends Area2D
 # Referência ao jogador para verificar o tipo de projétil
 @export var bubble_type: String
 
+
+#SO PRA SIMULAR A GRAVIDADE POR ENQUANTO DEPOIS TIRAR
+var velocity = Vector2(0, 0)  # Velocidade da bolha
+func _ready():
+	connect("body_entered", Callable(self, "_on_body_entered"))  # Conecta colisões com outras áreas
+	# Detecta quando a bolha colide com outro corpo
+	connect("area_entered", Callable(self, "_on_area_entered"))
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# Move o projetil para baixo
-	position.y += speed * delta
+	pass
 	# Remove o projétil ao sair da tela
 	#if position.y > get_viewport_rect().size.y:
 		#queue_free()
@@ -18,6 +25,12 @@ func _on_area_entered(area):
 	if area.is_in_group("spawner") and area.bubble_type == self.bubble_type:
 		#Destroi as bolhas
 		destroy_connected_bubbles()
+
+
+# Quando a bolha colide com algo
+func _on_body_entered(body):
+	if body.is_in_group("ground"):  # O chão precisa estar no grupo "ground"
+		velocity.y = 0  # Para a bolha ao colidir com o chão
 
 #Funcao para destruir as bolhas nas devidas condicoes
 func destroy_connected_bubbles():

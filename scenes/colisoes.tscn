@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxr00k6rv28e8"]
+
+[sub_resource type="GDScript" id="GDScript_l1w7y"]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	add_to_group(\"ground\")  # Coloca o chão no grupo \"ground\" para a bolha detectar a colisão
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eti3r"]
+size = Vector2(785, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm24n"]
+size = Vector2(35, 908)
+
+[node name="colisoes" type="StaticBody2D"]
+position = Vector2(393.5, 930)
+script = SubResource("GDScript_l1w7y")
+
+[node name="floor1" type="CollisionShape2D" parent="."]
+position = Vector2(0, -930)
+shape = SubResource("RectangleShape2D_eti3r")
+
+[node name="floor2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eti3r")
+
+[node name="wall1" type="CollisionShape2D" parent="."]
+position = Vector2(-375, -466)
+shape = SubResource("RectangleShape2D_sm24n")
+
+[node name="wall2" type="CollisionShape2D" parent="."]
+position = Vector2(376.5, -466)
+shape = SubResource("RectangleShape2D_sm24n")
