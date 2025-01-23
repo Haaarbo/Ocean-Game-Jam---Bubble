@@ -10,8 +10,8 @@ func _physics_process(delta: float) -> void:
 	# Move o projetil para baixo
 	position.y += speed * delta
 	# Remove o projétil ao sair da tela
-	if position.y > get_viewport_rect().size.y:
-		queue_free()
+	#if position.y > get_viewport_rect().size.y:
+		#queue_free()
 	
 func _on_area_entered(area):
 	# Verifica se a colisão é com outro projétil do mesmo tipo

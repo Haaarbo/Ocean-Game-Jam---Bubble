@@ -1,11 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3n7uikg6fjlm"]
+[gd_scene load_steps=6 format=3 uid="uid://b3n7uikg6fjlm"]
 
 [ext_resource type="PackedScene" uid="uid://cdreydg3qa64o" path="res://scenes/Player.tscn" id="1_tcavs"]
 [ext_resource type="PackedScene" uid="uid://dh85scig3a4wx" path="res://scenes/spawner.tscn" id="2_phe7y"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aryj7"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vmrsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eti3r"]
 size = Vector2(785, 20)
@@ -19,18 +15,6 @@ size = Vector2(35, 908)
 
 [node name="scrGame" type="Node2D" parent="."]
 position = Vector2(28, 26)
-
-[node name="bubble" type="Area2D" parent="scrGame"]
-position = Vector2(92, 30)
-metadata/_edit_group_ = true
-
-[node name="sprBubble" type="Sprite2D" parent="scrGame/bubble"]
-position = Vector2(-4.76837e-07, 4.76837e-07)
-scale = Vector2(14, 12)
-texture = SubResource("PlaceholderTexture2D_aryj7")
-
-[node name="colBubble" type="CollisionShape2D" parent="scrGame/bubble"]
-shape = SubResource("CircleShape2D_vmrsy")
 
 [node name="Player" parent="scrGame" instance=ExtResource("1_tcavs")]
 position = Vector2(316, 862)
@@ -52,6 +36,7 @@ position = Vector2(770, 464)
 shape = SubResource("RectangleShape2D_sm24n")
 
 [node name="Spawner" parent="scrGame" instance=ExtResource("2_phe7y")]
+position = Vector2(52, 14)
 
 [node name="scrControl" type="Control" parent="."]
 layout_mode = 3
