@@ -19,7 +19,12 @@ position = Vector2(52, 14)
 
 [node name="colisoes" parent="scrGame" instance=ExtResource("3_wbbxy")]
 
+[node name="ColorRect" type="ColorRect" parent="scrGame"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="scrControl" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 826.0
