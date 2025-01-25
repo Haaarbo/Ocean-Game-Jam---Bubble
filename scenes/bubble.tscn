@@ -6,7 +6,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fqtiq"]
 
-[node name="bubble" type="Area2D"]
+[node name="bubble" type="Area2D" groups=["bubble_group"]]
 position = Vector2(10, 10)
 script = ExtResource("1_qj42v")
 metadata/_edit_group_ = true

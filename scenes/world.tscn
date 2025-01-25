@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3n7uikg6fjlm"]
+[gd_scene load_steps=7 format=3 uid="uid://b3n7uikg6fjlm"]
 
 [ext_resource type="PackedScene" uid="uid://cdreydg3qa64o" path="res://scenes/Player.tscn" id="1_tcavs"]
 [ext_resource type="PackedScene" uid="uid://dh85scig3a4wx" path="res://scenes/spawner.tscn" id="2_phe7y"]
 [ext_resource type="PackedScene" uid="uid://dxr00k6rv28e8" path="res://scenes/colisoes.tscn" id="3_wbbxy"]
+[ext_resource type="Texture2D" uid="uid://htel02ge7bdi" path="res://sprites/gameplayfinal.png" id="4_t7yq1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jvia0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cnog8"]
 
@@ -19,12 +22,20 @@ position = Vector2(52, 14)
 
 [node name="colisoes" parent="scrGame" instance=ExtResource("3_wbbxy")]
 
-[node name="ColorRect" type="ColorRect" parent="scrGame"]
+[node name="Sprite2D" type="Sprite2D" parent="scrGame"]
+visibility_layer = 16
+texture = SubResource("CanvasTexture_jvia0")
+
+[node name="TextureRect" type="TextureRect" parent="scrGame"]
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="bgdGameplay" type="Sprite2D" parent="scrGame"]
+position = Vector2(402.5, 443)
+scale = Vector2(1.06295, 1.06073)
+texture = ExtResource("4_t7yq1")
+
 [node name="scrControl" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 826.0
@@ -53,3 +64,8 @@ position = Vector2(64, 704)
 
 [node name="nodeLimite2" type="Node2D" parent="."]
 position = Vector2(72, 40)
+
+[node name="bgdGeral" type="Sprite2D" parent="."]
+light_mask = 16
+visibility_layer = 15
+position = Vector2(640, 480)

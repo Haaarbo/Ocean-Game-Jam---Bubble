@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var bubble_scene: PackedScene #p/ bubble.tscn
-@export var spawn_time = 1.0
+@export var spawn_time = 15.0 # Tempo pra cada bolha spawnar
 @export var num_bubbles = 7 # Quantidade inicial
 @export var max_degrees = 10 # Limite de niveis de linhas de bolhas
 

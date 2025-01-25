@@ -26,11 +26,12 @@ window/size/viewport_height=960
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 
 ground=""
+bubble_group=""
 
 [input]
 
