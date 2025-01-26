@@ -1,24 +1,84 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdreydg3qa64o"]
+[gd_scene load_steps=12 format=3 uid="uid://cdreydg3qa64o"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_boqv3"]
 [ext_resource type="Texture2D" uid="uid://bs41xkifn7yye" path="res://sprites/player_placeholder.png" id="2_t835x"]
+[ext_resource type="Texture2D" uid="uid://d1kx2h6nnaggg" path="res://assets/CharSheet.png" id="3_ns10v"]
 [ext_resource type="PackedScene" uid="uid://dlk5xnjkve6jv" path="res://scenes/Shooter.tscn" id="3_uajd3"]
+[ext_resource type="Texture2D" uid="uid://ba28n53c6kvl5" path="res://addons/BulletUpHell/BulletScene/Sprites/Bullet_06.png" id="3_xiuy2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah02y"]
+atlas = ExtResource("3_ns10v")
+region = Rect2(10, 0, 93, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gvut"]
+atlas = ExtResource("3_ns10v")
+region = Rect2(105, 0, 93, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb3vv"]
+atlas = ExtResource("3_ns10v")
+region = Rect2(200, 0, 93, 189)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmpuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah02y")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gvut")
+}],
+"loop": true,
+"name": &"Direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb3vv")
+}],
+"loop": true,
+"name": &"Esquerda",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35b1r"]
+radius = 34.2345
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b0s3l"]
-radius = 28.4429
+radius = 6.95112
 
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_mask = 6
+collision_mask = 7
 script = ExtResource("1_boqv3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
 texture = ExtResource("2_t835x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-16, -15)
+sprite_frames = SubResource("SpriteFrames_dmpuy")
+animation = &"Default"
+
+[node name="grazeBox" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_35b1r")
+
+[node name="Collision" type="CollisionShape2D" parent="CharacterBody2D"]
 scale = Vector2(1.00351, 1)
 shape = SubResource("CircleShape2D_b0s3l")
 
+[node name="focusSprite" type="Sprite2D" parent="CharacterBody2D/Collision"]
+visible = false
+position = Vector2(-2.07887e-07, 1.78814e-07)
+scale = Vector2(0.622814, 0.625)
+texture = ExtResource("3_xiuy2")
+
 [node name="Shooter" parent="CharacterBody2D" instance=ExtResource("3_uajd3")]
+visible = false
 position = Vector2(1, -53)

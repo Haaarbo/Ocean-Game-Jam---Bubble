@@ -30,9 +30,8 @@ func _on_area_entered(area):
 
 # Quando a bolha colide com algo
 func _on_body_entered(body):
-	if body.is_in_group("ground"):  # O chão precisa estar no grupo "ground"
-		velocity.y = 0  # Para a bolha ao colidir com o chão
-
+	print("bola fora")
+	queue_free()
 #Funcao para destruir as bolhas nas devidas condicoes
 func destroy_connected_bubbles():
 	# Busca todos os projéteis conectados e do mesmo tipo para destruir
