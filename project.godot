@@ -74,9 +74,11 @@ Bomb={
 
 [layer_names]
 
+2d_render/layer_1="Bolhas"
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Bubble"
 2d_physics/layer_3="Bullet"
+2d_physics/layer_4="Floor"
 
 [rendering]
 

@@ -8,10 +8,12 @@
 
 [node name="bubble" type="Area2D" groups=["bubble_group"]]
 position = Vector2(10, 10)
+collision_mask = 3
 script = ExtResource("1_qj42v")
 metadata/_edit_group_ = true
 
 [node name="sprBubble" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(-4.76837e-07, 4.76837e-07)
 scale = Vector2(14, 12)
 texture = SubResource("PlaceholderTexture2D_nvg8t")

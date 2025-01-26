@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3n7uikg6fjlm"]
+[gd_scene load_steps=6 format=3 uid="uid://b3n7uikg6fjlm"]
 
 [ext_resource type="PackedScene" uid="uid://cdreydg3qa64o" path="res://scenes/Player.tscn" id="1_tcavs"]
 [ext_resource type="PackedScene" uid="uid://dh85scig3a4wx" path="res://scenes/spawner.tscn" id="2_phe7y"]
 [ext_resource type="PackedScene" uid="uid://dxr00k6rv28e8" path="res://scenes/colisoes.tscn" id="3_wbbxy"]
 [ext_resource type="Texture2D" uid="uid://htel02ge7bdi" path="res://sprites/gameplayfinal.png" id="4_t7yq1"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_jvia0"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_cnog8"]
+[ext_resource type="Texture2D" uid="uid://hp4xigcf1yud" path="res://sprites/backgroundfinal.png" id="5_1t3hr"]
 
 [node name="World" type="Node2D"]
 
@@ -18,17 +15,9 @@ position = Vector2(28, 26)
 position = Vector2(316, 862)
 
 [node name="Spawner" parent="scrGame" instance=ExtResource("2_phe7y")]
-position = Vector2(52, 14)
+position = Vector2(52, 23)
 
 [node name="colisoes" parent="scrGame" instance=ExtResource("3_wbbxy")]
-
-[node name="Sprite2D" type="Sprite2D" parent="scrGame"]
-visibility_layer = 16
-texture = SubResource("CanvasTexture_jvia0")
-
-[node name="TextureRect" type="TextureRect" parent="scrGame"]
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="bgdGameplay" type="Sprite2D" parent="scrGame"]
 position = Vector2(402.5, 443)
@@ -43,21 +32,38 @@ offset_right = 1280.0
 offset_bottom = 960.0
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="scrControl"]
+[node name="lblLife" type="Label" parent="scrControl"]
 layout_mode = 0
-offset_right = 454.0
-offset_bottom = 960.0
+offset_left = 180.0
+offset_top = 144.0
+offset_right = 220.0
+offset_bottom = 167.0
+scale = Vector2(4.44, 2.24)
 
-[node name="lblScore" type="Label" parent="scrControl/Panel"]
+[node name="lblMultiplier" type="Label" parent="scrControl"]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 37.0
-offset_right = 121.0
-offset_bottom = 75.0
-text = "Score"
-label_settings = SubResource("LabelSettings_cnog8")
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 189.0
+offset_top = 341.0
+offset_right = 229.0
+offset_bottom = 364.0
+scale = Vector2(4.76991, 1.77397)
+
+[node name="lblScore" type="Label" parent="scrControl"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 652.0
+offset_right = 73.0
+offset_bottom = 675.0
+scale = Vector2(9.15594, 4.44286)
+
+[node name="txtScore" type="Label" parent="scrControl"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 540.0
+offset_right = 160.0
+offset_bottom = 563.0
+scale = Vector2(3.517, 1.98769)
+text = "SCORE"
 
 [node name="nodeLimite" type="Node2D" parent="."]
 position = Vector2(64, 704)
@@ -68,4 +74,6 @@ position = Vector2(72, 40)
 [node name="bgdGeral" type="Sprite2D" parent="."]
 light_mask = 16
 visibility_layer = 15
+z_index = -1
 position = Vector2(640, 480)
+texture = ExtResource("5_1t3hr")

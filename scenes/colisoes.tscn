@@ -22,11 +22,15 @@ size = Vector2(785, 20)
 size = Vector2(35, 908)
 
 [node name="colisoes" type="StaticBody2D"]
+light_mask = 8
+visibility_layer = 8
 position = Vector2(393.5, 930)
+collision_layer = 8
+collision_mask = 5
 script = SubResource("GDScript_l1w7y")
 
 [node name="floor1" type="CollisionShape2D" parent="."]
-position = Vector2(0, -930)
+position = Vector2(1.5, -295)
 shape = SubResource("RectangleShape2D_eti3r")
 
 [node name="floor2" type="CollisionShape2D" parent="."]

@@ -10,10 +10,11 @@ radius = 28.4429
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_mask = 6
+collision_mask = 14
 script = ExtResource("1_boqv3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+z_index = 1
 texture = ExtResource("2_t835x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
